@@ -1,0 +1,72 @@
+[
+    {
+        "id":1,
+        "name":"Bill Oppy",
+        "age": 24,
+        "gender":"Male",
+        "UserId":1
+    },
+    {
+        "id":2,
+        "name":"Randene Dailey",
+        "age": 25,
+        "gender":"Female",
+        "UserId":2
+    },
+    {
+        "id":3,
+        "name":"Vanya Roylance",
+        "age":26,
+        "gender":"Male",
+        "UserId":3
+    },
+    {
+        "id":4,
+        "name":"Edvard Kevlin",
+        "age":22,
+        "gender":"Male",
+        "UserId":4
+    },
+    {
+        "id":5,
+        "name":"Amara Conant",
+        "age":28,
+        "gender":"Female",
+        "UserId":5
+    },
+    {
+        "id":6,
+        "name":"Alyda Fairhurst",
+        "age":28,
+        "gender":"Female",
+        "UserId":6
+    },
+    {
+        "id":7,
+        "name":"Meade Mahood",
+        "age":22,
+        "gender":"Female",
+        "UserId":7
+    },
+    {
+        "id":8,
+        "name":"Caldwell Morfield",
+        "age":25,
+        "gender":"Male",
+        "UserId":8
+    },
+    {
+        "id":9,
+        "name":"Delmor Withur",
+        "age":21,
+        "gender":"Male",
+        "UserId":9
+    },
+    {
+        "id":10,
+        "name":"Gardie Florio",
+        "age":20,
+        "gender":"Male",
+        "UserId":10
+    }
+]
