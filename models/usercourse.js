@@ -12,6 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+    get status() {
+      if (this.status === true) {
+        return 'Completed'
+      } else {
+        return 'On Going'
+      }
+    }
   }
   UserCourse.init({
     status: DataTypes.BOOLEAN,

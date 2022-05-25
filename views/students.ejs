@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Page</title>
+</head>
+<body >
+    <h1>Profile</h1>
+    <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
+
+    <div>
+        <table border="1" style="text-align:center" >
+            <thead>
+                <th>Student Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Courses</th>
+                <th>Status</th>
+            </thead>
+            <tbody>            
+                <tr>
+                    <td><%= data[0].Profile.id %> </td>
+                    <td><%= data[0].Profile.name %> </td>
+                    <td><%= data[0].Profile.age %> </td>
+                    <td><%= data[0].Profile.gender %> </td>
+                    <td>
+                        <li>
+                            <%= data[0].Courses[0].name %> 
+                            <button onclick="hide()">Course Detail</button>
+                            <br>
+                            <pre id="detail" style="display:none ;">
+    <%= data[0].Courses[0].description %> 
+                            </pre>
+                        </li>
+                    </td>
+                    <td>
+                        <%= data[0].Courses[0].UserCourse.status %> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function hide() {
+          var x = document.getElementById("detail");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+    </script>
+</body>
+</html>
