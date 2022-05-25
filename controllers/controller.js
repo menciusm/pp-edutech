@@ -35,6 +35,21 @@ class Controller {
             res.send(err)
         })
     }
+    static addCourseForm(req, res) {
+
+    }
+    static addCourse(req, res) {
+        
+    }
+    static editCourseForm(req, res) {
+
+    }
+    static editCourse(req, res) {
+
+    }
+    static delete(req, res) {
+
+    }
 }
 
 module.exports = {

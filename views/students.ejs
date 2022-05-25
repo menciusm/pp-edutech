@@ -11,21 +11,31 @@
     <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
 
     <div>
-        <table border="1" style="text-align:center" >
+        <table border="1" >
             <thead>
-                <th>Student Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th>Profile</th>
+            </thead>
+            <tbody>            
+                <td style="text-align:justify ;">
+                    <label for="name">Name :</label>
+                    <%= data[0].Profile.name %> <br>
+                    <label for="age">Age :</label>
+                    <%= data[0].Profile.age %> <br>
+                    <label for="gender">Gender :</label>
+                    <%= data[0].Profile.gender %>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div>
+        <table border="1" style="text-align:center">
+            <thead>
                 <th>Courses</th>
                 <th>Status</th>
             </thead>
-            <tbody>            
+            <tbody>
                 <tr>
-                    <td><%= data[0].Profile.id %> </td>
-                    <td><%= data[0].Profile.name %> </td>
-                    <td><%= data[0].Profile.age %> </td>
-                    <td><%= data[0].Profile.gender %> </td>
                     <td>
                         <li>
                             <%= data[0].Courses[0].name %> 
