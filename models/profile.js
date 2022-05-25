@@ -10,13 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Profile.belongsTo(models.user);
     }
   }
   Profile.init({
     name: DataTypes.STRING,
     age: DataTypes.INTEGER,
-    gender: DataTypes.STRING
+    gender: DataTypes.STRING,
+    createdAt : DataTypes.DATE,
+    updatedAt : DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Profile',
