@@ -18,7 +18,14 @@ module.exports = (sequelize, DataTypes) => {
     age: DataTypes.INTEGER,
     gender: DataTypes.STRING,
     createdAt : DataTypes.DATE,
-    updatedAt : DataTypes.DATE
+    updatedAt : DataTypes.DATE,
+    UserId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'User', 
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Profile',
