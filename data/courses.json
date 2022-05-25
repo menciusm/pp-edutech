@@ -2,28 +2,28 @@
     {
         "id": 1,
         "name": "Reading for General Interests",
-        "description": "Mata kuliah ini membahas dan melatih keterampilan membaca secara efektif dengan memperhatikan kegiatan prabaca, scanning, skimming, dan bangun gramatika sebagaimana yang dibahas dalam BasicGrammar untuk memahami hubungan antarkomponen wacana serta memperkenalkan berbagai teknik membangun kosakata termasuk mengenal kata dalam kalimat",
+        "description": "Mata kuliah ini membahas dan melatih keterampilan membaca secara efektif dengan memperhatikan kegiatan prabaca, scanning, skimming, dan bangun gramatika.",
         "duration": 60,
         "category": "Reading"
     },
     {
         "id": 2,
         "name": "Reading Scientific Texts",
-        "description": "Mata kuliah ini melatih keterampilan membaca efektif teks-teks ilmiah akademik dari berbagai bidang ilmu, baik dalam bentuk artikel jurnal ilmiah,laporan penelitian, atau buku, secara efektif dengan memperhatikan kegiatan prabaca, scanning, skimming untuk memahami hubungan antarkomponen wacana setingkat advanced serta keterampilan mengatasi permasalahan kata, istilah, dan ungkapan baru atau khas.",
+        "description": "Mata kuliah ini melatih keterampilan membaca efektif teks-teks ilmiah akademik secara efektif.",
         "duration": 60,
         "category": "Reading"
     },
     {
         "id": 3,
         "name": "Paragraph Writing",
-        "description": "Mata kuliah ini melatih (1) membuat frasa dan klausa dengan memperhatikan konvensi gramatika setidaknya dengan bahasan mata kuliah Intermediate Grammar serta aturan mekanika penulisan seperti pungtuasi dan format; (2)membuat karangan deskriptif, naratif, dan argumentatif yang sederhana; (3) mengembangkan kalimat utamamenjadi paragraf dan mengorganisasi paragraf yang efektif secara logis dan retoris; (4) mengembangkan jenis-jenis paragraf; (5) menyiapkan ragangan (outline), dan (6) membaca teks sebagai penunjang untuk membuat karangan sendiri dengan memperhatikan prinsip-prinsip dalam melakukan sitasi dan dokumentasi yang terhindar dari plagiarisme.",
+        "description": "Mata kuliah ini membahas dan melatih keterampilan membaca secara efektif dengan memperhatikan kegiatan prabaca, scanning, skimming, dan bangun gramatika.",
         "duration": 60,
         "category": "Writing"
     },
     {
         "id": 4,
         "name": "Essay Writing",
-        "description": "Mata kuliah ini melatih (1) menulis karangan deskriptif, naratif, dan argumentatif dengan dengan menerapkan setidaknya bentuk dan pola gramatikal yang dibahas dalam Upper Intermediate,  (2) melakukan kegiatan pratulis terutama brainstorming dan freewriting, (3) menulis secara bertahap dengan membuat ragangan, mengajukan draf, dan merevisi, (4) menata paragraf dalam sebuah esai dengan pertimbangan strategi retoris termasuk menggunakan transisi antar-paragraf secara efektif, dan (5) memanfaatkan bacaan atas berbagai tulisan sebagai rujukan dengan memperhatikan prinsip-prinsip dalam melakukan sitasi dan dokumentasi yang terhindar dari plagiarisme.",
+        "description": "Mata kuliah ini melatih menulis karangan deskriptif, naratif, dan argumentatif dengan menerapkan bentuk dan pola gramatikal yang dibahas dalam Upper Intermediate.",
         "duration": 60,
         "category": "Writing"
     },
@@ -37,28 +37,28 @@
     {
         "id": 6,
         "name": "Basic Grammar",
-        "description": "Mata kuliah ini membahas dan melatih mengidentifikasi, mengelaborasi, dan mereproduksi pembentukan dan penggunaan kata, frasa, klausa independen, kalimat majemuk setara, pola-pola dasar kalimat, kala, dan bentuk kalimat serta komponennya (parts of speech).",
+        "description": "Mata kuliah ini membahas dan melatih mengidentifikasi pembentukan dan penggunaan kata, kalimat majemuk setara, pola-pola dasar kalimat, dan bentuk kalimat serta komponennya.",
         "duration": 60,
         "category": "Grammar"
     },
     {
         "id": 7,
         "name": "Intermediate Grammar",
-        "description": "Mata kuliah ini mengembangkan bahasan dalam mata kuliah Basic Grammar dengan berfokus pada membahas dan melatih penggunaan kala, finite dan non-finite verbs, determiners, preparatory it, preparatory there, question tag, dan dependent clauses.",
+        "description": "Mata kuliah ini membahas dan melatih penggunaan kala, finite dan non-finite verbs, determiners, preparatory it, preparatory there, question tag, dan dependent clauses.",
         "duration": 60,
         "category": "Grammar"
     },
     {
         "id": 8,
         "name": "Upper lntermediate Grammar",
-        "description": "Mata kuliah ini membahas dan melatih penggunaan perluasan pre-modifier: determiners, complex sentences, compound sentence, phrasal verbs, non-finites terutama active/present participles, passive/past participles, dan infinitives (bare dan to), serta subjunctives dan conditionals.",
+        "description": "Mata kuliah ini membahas dan melatih penggunaan perluasan pre-modifier: determiners, complex sentences, compound sentence, phrasal verbs, non-finites, passive/past participles, dan infinitives.",
         "duration": 60,
         "category": "Grammar"
     },
     {
         "id": 9,
         "name": "Translating General Texts: English-Indonesian & Indonesian-English",
-        "description": "Mata kuliah ini melatih menghasilkan padanan kata, frasa,  idiom, dan dari teks berbahasa Inggris dan teks berbahasa Indonesia tingkat intermediate ke dalam bahasa Indonesia. Teks yang digunakan adalah teks otentik yang diambil terutama dari media umum. Dalam proses menerjemahkan, pokok-pokok yang tercakup dalam Reading Text of Various Modes, Reading Scientific Texts, Intermediate Grammar, dan Upper Intermediate Grammar.",
+        "description": "Mata kuliah ini melatih menghasilkan padanan kata, frasa,  idiom, dan dari teks berbahasa Inggris dan teks berbahasa Indonesia tingkat intermediate ke dalam bahasa Indonesia.",
         "duration": 60,
         "category": "Translating"
     },
@@ -72,28 +72,28 @@
     {
         "id": 11,
         "name": "Introduction to Literary Studies",
-        "description": "Setelah mengikuti mata kuliah ini mahasiswa akan memiliki kemampuan menunjukkan dan memaparkan bangun dasar, dan membahas gagasan dalam karya fiksi berbahasa Inggris dengan memperhatikan aspek-aspek dalam karya seperti tema, karakterisasi, alur, latar, simbolisme, gaya bahasa, dan pola narasi dasar. ",
+        "description": "Setelah mengikuti mata kuliah ini mahasiswa akan memiliki kemampuan menunjukkan dan memaparkan bangun dasar, dan membahas gagasan dalam karya fiksi berbahasa Inggris. ",
         "duration": 60,
         "category": "Literature"
     },
     {
         "id": 12,
         "name": "Survey of English Literature",
-        "description": "Setelah mengikuti mata kuliah ini mahasiswa akan dapat mengidentifikasi dan memetakan berbagai teks seminal, tokoh, isu tematik, pola/motif, dan gerakan/aliran kesusastraan/kebudayan di wilayah Inggris, dari: (1) Old English period hingga abad ke-17, (2) Zaman Elizabethan sebagai early modern di Inggris, (3) Modernisme hingga keberagaman dan eksperimentasi yang berkembang hingga abad ke-21.",
+        "description": "Mata kuliah ini membahas dan memetakan berbagai teks seminal, dan gerakan/aliran kesusastraan/kebudayan di wilayah Inggris.",
         "duration": 60,
         "category": "Literature"
     },
     {
         "id": 13,
         "name": "Survey of American Literature",
-        "description": "egiatan utama Mata Kuliah ini adalah membaca dan membahas sejarah perkembangan Amerika sejak koloni pertama hingga abad ke-19.",
+        "description": "Kegiatan utama Mata Kuliah ini adalah membaca dan membahas sejarah perkembangan Amerika sejak koloni pertama hingga abad ke-19.",
         "duration": 60,
         "category": "Literature"
     },
     {
         "id": 14,
         "name": "English Phonetics and Phonology",
-        "description": "Mata kuliah ini membahas tata bunyi bahasa Inggris, baik aural maupun oral dan menyusun deskripsi fonetik dengan mempelajari fonetik artikulatoris, transkripsi fonetik, fonem vokal dan konsonan,alofon, varian, dan fonem suprasegmental.",
+        "description": "Mata kuliah ini membahas tata bunyi bahasa Inggris.",
         "duration": 60,
         "category": "Linguistic"
     },
