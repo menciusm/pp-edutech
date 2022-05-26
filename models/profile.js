@@ -12,13 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Profile.belongsTo(models.User);
     }
-    static title(gender) {
-      if (gender === 'Male') {
-        return this.name = `Mr. ${this.name}`
-      } else {
-        return this.name = `Mrs. ${this.name}`
-      }
-    }
   }
   Profile.init({
     name: {

@@ -11,7 +11,6 @@ class Controller {
         res.render('registerForm')
     }
     static register(req, res) {
-        console.log(req.body);
         const {email, password, name, dateOfBirth, gender} = req.body
         User.create({
             email: email,
@@ -35,7 +34,6 @@ class Controller {
     }
     static login (req, res) {
         const error = req.query.error
-        // console.log(req.query);
         res.render('loginForm', {error})
     }
     static submit (req, res) {
@@ -50,9 +48,10 @@ class Controller {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
 
                 if (isValidPassword) {
+                    req.session.userId = user.id
                     if (user.role === 'student') {
                         return res.redirect(`../student/${user.id}`)
-                    } else {
+                    } else { // tambahin else if admin
                         const error = `Invalid email or password`
                         return res.redirect(`/login?error=${error}`)
                     }
@@ -66,9 +65,17 @@ class Controller {
             res.send(err)
         })
     }
+    static logout (req, res) {
+        req.session.destroy((err)=> {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('../login')
+            }
+        })
+    }
     static studentPage(req, res) {
         const id = +req.params.studentsId
-        // console.log(+req.params.studentsId);
         User.findAll({
             attributes: {
                 exclude:["createdAt", "updatedAt"]
@@ -124,8 +131,6 @@ class Controller {
         })
     }
     static addCourse(req, res) {
-        // console.log(+req.body.CourseId);
-        // console.log(+req.params.studentsId);
         const CourseId = +req.body.CourseId
         const UserId = +req.params.studentsId
         UserCourse.create({
@@ -144,10 +149,12 @@ class Controller {
     }
     static editProfileForm(req, res) {
         const id = +req.params.studentsId
-        // console.log(id);
-        Profile.findByPk(id, {
+        Profile.findOne({
             attributes: {
                 exclude:["createdAt", "updatedAt"]
+            },
+            where: {
+                UserId: id
             }
         })
         .then((data) => {
@@ -161,7 +168,6 @@ class Controller {
         })
     }
     static editProfile(req, res) {
-        // console.log(req.body);
         const UserId = +req.params.studentsId
         const { name, age, gender} = req.body
         Profile.update({
@@ -170,7 +176,7 @@ class Controller {
             gender: gender,
         },{
             where: {
-                id: UserId
+                UserId: UserId
             }
         })
         .then(() => {
@@ -183,7 +189,6 @@ class Controller {
     static delete(req, res) {
         const CourseId = +req.params.courseId
         const UserId = +req.params.studentsId
-        // console.log(CourseId);
         UserCourse.destroy({
             where: {
                 UserId: UserId,

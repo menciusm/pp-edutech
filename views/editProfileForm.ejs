@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Edit Profile Info</h1>
-    <!-- <%= JSON.stringify(data) %>  -->
+    <!-- <%= JSON.stringify(data.UserId) %>  -->
     <table border="1">
-        <form action="/student/<%= data.id %> /editProfile" method="post">
+        <form action="/student/<%= data.UserId%> /editProfile" method="post">
             <thead>
                 <th>Profile</th>
             </thead>
@@ -32,7 +32,7 @@
                         </select>
                     </div>
                     <button type="submit">Edit</button>
-                    <a href="/student/">
+                    <a href="/student/<%= data.UserId %>">
                         <button>Cancel</button>
                     </a>
                 </td>

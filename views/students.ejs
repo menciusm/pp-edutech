@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css">
     <title>Students Page</title>
 </head>
 <body >
     <h1>Profile</h1>
-    <!-- <%= JSON.stringify(data[0].Courses, null, 2) %>  -->
-
+    <div style="margin-left:10% ;">
+        <a href="/logout">
+            <button>Log out</button>
+        </a>
+    </div>
     <div>
-        <table border="1" >
+        <table border="1">
             <thead>
                 <th>Profile</th>
             </thead>
-            <tbody>            
+            <tbody >            
                 <td style="text-align:justify ;">
                     <label for="name">Name :</label>
                     <%= data[0].Profile.name %> <br>
@@ -29,7 +35,7 @@
         <a href="/student/<%= data[0].id %> /editProfile"><button>Edit Profile</button></a>
     </div>
     <br>
-    <div>
+    <div >
         <table border="1" style="text-align:center">
             <thead>
                 <th>Courses</th>
