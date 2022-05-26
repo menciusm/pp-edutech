@@ -7,9 +7,7 @@
     <title>Students Page</title>
 </head>
 <body >
-    <h1>Profile</h1>
-    <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
-
+    <h1>Student List</h1>
     <div>
         <table border="1" style="text-align:center" >
             <thead>
@@ -23,11 +21,11 @@
             <tbody>            
                 <% data.map(user => { %>
                 <tr>
-                    <td><%= user.Profile.id %> </td>
-                    <td><%= user.Profile.name %> </td>
-                    <td><%= user.Profile.age %> </td>
-                    <td><%= user.Profile.gender %> </td>
-                    <% user.Courses.map((course) => { %>
+                    <td><%= user.id %></td>
+                    <td><%= user.Profile.name %></td>
+                    <td><%= user.Profile.age %></td>
+                    <td><%= user.Profile.gender %></td>
+                    <% user.Courses.map((course, i) => { %>
                     <td>
                         <li>
                             <%= course.name %> 
