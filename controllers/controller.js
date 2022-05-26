@@ -69,11 +69,40 @@ class Controller {
             res.send(err)
         })
     }
-    static editCourseForm(req, res) {
-
+    static editProfileForm(req, res) {
+        const id = +req.params.studentsId
+        // console.log(id);
+        Profile.findByPk(id, {
+            attributes: {
+                exclude:["createdAt", "updatedAt"]
+            }
+        })
+        .then((data) => {
+            res.render('editProfileForm', {data})
+        })
+        .catch((err) => {
+            res.send(err)
+        })
     }
-    static editCourse(req, res) {
-
+    static editProfile(req, res) {
+        console.log(req.body);
+        const UserId = +req.params.studentsId
+        const { name, age, gender} = req.body
+        Profile.update({
+            name: name,
+            age: +age,
+            gender: gender,
+        },{
+            where: {
+                id: UserId
+            }
+        })
+        .then(() => {
+            res.redirect(`../${UserId}`)
+        })
+        .catch((err) => {
+            res.send(err)
+        })
     }
     static delete(req, res) {
         const CourseId = +req.params.courseId
