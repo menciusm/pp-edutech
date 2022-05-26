@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Profile.belongsTo(models.User);
     }
+    helo(){
+      return `Selamat datang ${this.name}` 
+    }
   }
   Profile.init({
     name: {
