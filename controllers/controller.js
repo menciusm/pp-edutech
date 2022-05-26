@@ -76,22 +76,14 @@ class Controller {
 
     }
     static delete(req, res) {
-        console.log(+req.params.courseId);
-        console.log(+req.params.studentsId);
-        // const CourseId = +req.body.CourseId
+        const CourseId = +req.params.courseId
         const UserId = +req.params.studentsId
-        UserCourse.findAll({
+        // console.log(CourseId);
+        UserCourse.destroy({
             where: {
-                UserId: UserId
-            }
-        })
-        .then((result) => {
-            const CourseId = result[0].dataValues.CourseId
-            return UserCourse.destroy({               
-               where : {
+                UserId: UserId,
                 CourseId: CourseId
-               }
-           })
+            }
         })
         .then(() => {
             res.redirect(`/student/${UserId}`)
