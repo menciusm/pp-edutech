@@ -1,13 +1,13 @@
 const { User, Profile, Course, UserCourse} = require('../models')
 const minutesConverter = require('../helpers/minutesConverter')
 const ageConverter  = require('../helpers/ageConverter')
+const bcrypt = require('bcryptjs')
 
 class Controller {
     static home(req, res) {
         res.render('index')
     }
     static registerForm(req,res) {
-        // console.log(`connected`);
         res.render('registerForm')
     }
     static register(req, res) {
@@ -18,8 +18,6 @@ class Controller {
             password: password
         })
         .then((result) => {
-            // console.log(result.id);
-            console.log(`create user success`);
             const UserId = +result.id
             return Profile.create({
                 name: name,
@@ -29,7 +27,6 @@ class Controller {
             })
         })
         .then(() => {
-            console.log(`create profile success`);
             res.redirect('../login')
         })
         .catch((err) => {
@@ -37,10 +34,37 @@ class Controller {
         })
     }
     static login (req, res) {
-        res.render('loginForm')
+        const error = req.query.error
+        // console.log(req.query);
+        res.render('loginForm', {error})
     }
     static submit (req, res) {
+        const {email, password} = req.body
+        User.findOne({
+            where: {
+                email: email
+            }
+        })
+        .then((user) => {
+            if(user) {
+                const isValidPassword = bcrypt.compareSync(password, user.password)
 
+                if (isValidPassword) {
+                    if (user.role === 'student') {
+                        return res.redirect(`../student/${user.id}`)
+                    } else {
+                        const error = `Invalid email or password`
+                        return res.redirect(`/login?error=${error}`)
+                    }
+                } else {
+                    const error = `Invalid email or password`
+                    return res.redirect(`/login?error=${error}`)
+                }
+            }
+        })
+        .catch((err) => {
+            res.send(err)
+        })
     }
     static studentPage(req, res) {
         const id = +req.params.studentsId
