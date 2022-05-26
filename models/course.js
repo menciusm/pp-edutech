@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Course.belongsToMany(models.User, { through: 'UserCourse' });
     }
+
+    static deleteCourse(id) {
+      let option = {
+        where: { id: id }
+      }
+
+      return this.destroy(option)
+    }
   }
   Course.init({
     name: DataTypes.STRING,

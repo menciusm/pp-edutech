@@ -16,7 +16,6 @@
                 <th>Age</th>
                 <th>Gender</th>
                 <th>Courses</th>
-                <th>Status</th>
             </thead>
             <tbody>            
                 <% data.map(user => { %>
@@ -25,7 +24,7 @@
                     <td><%= user.Profile.name %></td>
                     <td><%= user.Profile.age %></td>
                     <td><%= user.Profile.gender %></td>
-                    <% user.Courses.map((course, i) => { %>
+                    <% user.Courses.map((course) => { %>
                     <td>
                         <li>
                             <%= course.name %> 
@@ -33,9 +32,6 @@
                             <br>
                             <pre id="detail" style="display:none ;"><%= course.description %></pre>
                         </li>
-                    </td>
-                    <td>
-                        <%= course.UserCourse.status %> 
                     </td>
                     <% }) %>
                 </tr>

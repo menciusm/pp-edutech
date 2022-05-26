@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course - List of Student Enrolled</title>
+</head>
+<body>
+    <h1><%= data[0].Courses[0].name %></h1>
+    <h3>Total student enrolled: <%= data.length %></h3>
+    <h3>Complete: <%= countComplete(data) %></h3>
+    <h3>On Going: <%= countOnGoing(data) %></h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map(el => { %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><%= el.Profile.name %></td>
+                    <td><%= el.Courses[0].UserCourse.isComplete %></td>
+                    <td>
+                        <form action="/admin/course/<%= el.Courses[0].id %>/enrolled/<%= el.id %> " method="post">
+                            <button name="status" value="<%= el.Courses[0].UserCourse.isComplete %>">Change Status</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+</body>
+</html>

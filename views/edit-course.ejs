@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course Form</title>
+</head>
+<body>
+    <h1>Edit Course Form</h1>
+    <form action="/admin/course/<%= data.id %>/edit" method="post">
+        <div>
+            <label for="name">Course Name</label>
+            <input type="text" name="name" id="name" value="<%= data.name %>">
+        </div>
+        <div>
+            <label for="desc">Course Description</label>
+            <input type="text" name="description" id="desc" value="<%= data.description %>">
+        </div>
+        <div>
+            <label for="duration">Course Duration</label>
+            <input type="number" name="duration" id="duration" value="<%= Number(data.duration) %>">
+        </div>
+        <div>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <% ['Reading', 'Writing', 'Grammar', 'Translating', 'Linguistic', 'Literature'].forEach(el => { %>
+                    <% if (el === data.category) { %>
+                        <option value="<%= el%>" selected><%= el %></option>
+                    <% } else { %>
+                        <option value="<%= el %>"><%= el %></option>
+                    <% } %>
+                <% }); %> 
+            </select>
+        </div>
+        <div>
+            <button type="submit">Edit Course</button>
+        </div>
+    </form>
+</body>
+</html>

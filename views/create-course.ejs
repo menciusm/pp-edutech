@@ -8,14 +8,32 @@
 </head>
 <body>
     <h1>Create Course Form</h1>
-    <form action="" method="post">
+    <form action="/admin/course/add" method="post">
         <div>
             <label for="name">Course Name</label>
             <input type="text" name="name">
         </div>
         <div>
             <label for="desc">Course Description</label>
-            <input type="text" name="" id="">
+            <input type="text" name="description" id="desc">
+        </div>
+        <div>
+            <label for="duration">Course Duration</label>
+            <input type="number" name="duration" id="duration">
+        </div>
+        <div>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="Reading">Reading</option>
+                <option value="Writing">Writing</option>
+                <option value="Grammar">Grammar</option>
+                <option value="Translating">Translating</option>
+                <option value="Linguistic">Linguistic</option>
+                <option value="Literature">Literature</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Add New Course</button>
         </div>
     </form>
 </body>

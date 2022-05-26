@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Course List</h1>
+    <a href="/admin/course/add">
+        <button>New Course</button>
+    </a>
+    <a href="/admin/course/chart">
+        <button>See in Chart</button>
+    </a>
+    <p></p>
     <table border="1">
         <thead>
             <tr>
@@ -34,6 +41,7 @@
                         <a href="/admin/course/<%= el.id %>/delete">
                             <button>Delete</button>
                         </a>
+                        <a href="/admin/course/<%= el.id %>/enrolled">Students List</a>
                     </td>
                 </tr>
             <% }) %>
