@@ -4,10 +4,12 @@ const student = require('./student')
 
 //router index
 router.get('/', Controller.home)
-router.use('/student', student)
-// router.get('/login', Controller.login)                                                    //login page
-// router.post('/login', Controller.submit)                                                   //login submit
+router.get('/register', Controller.registerForm)
+router.post('/register', Controller.register)
+router.get('/login', Controller.login)                                                    //login page
+router.post('/login', Controller.submit)                                                   //login submit
 // router.post('/logout', Controller.logout)                                                   //logout submit
+router.use('/student', student)
 
 //=====router admin
 // router.get('/admin/:adminId', Controller.adminPage)                                       //admin home page

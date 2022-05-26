@@ -12,11 +12,38 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Profile.belongsTo(models.User);
     }
+    static title(gender) {
+      if (gender === 'Male') {
+        return this.name = `Mr. ${this.name}`
+      } else {
+        return this.name = `Mrs. ${this.name}`
+      }
+    }
   }
   Profile.init({
-    name: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    gender: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: true,
+        notEmpty: { msg: `Name cannot be empty`},
+        len: {args : [1,50], msg: `Maximum length is 50 characters`}
+      }
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: true,
+        notEmpty: { msg: `Age cannot be empty`},
+        min:{args : 18, msg: `Minimum age is 18`},
+        max:{args : 30, msg: `Maximum age is 30`}
+      }
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     createdAt : DataTypes.DATE,
     updatedAt : DataTypes.DATE
   }, {
