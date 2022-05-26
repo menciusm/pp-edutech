@@ -5,6 +5,7 @@ module.exports = {
   up (queryInterface, Sequelize) {
     let data = JSON.parse(fs.readFileSync('./data/profile.json', 'utf8'))
     data.forEach(el => {
+      delete el.id
       el.createdAt = new Date()
       el.updatedAt = new Date()
     });

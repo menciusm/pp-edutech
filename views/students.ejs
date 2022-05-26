@@ -8,50 +8,56 @@
 </head>
 <body >
     <h1>Profile</h1>
-    <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
+    <!-- <%= JSON.stringify(data[0].Courses, null, 2) %>  -->
 
     <div>
-        <table border="1" style="text-align:center" >
+        <table border="1" >
             <thead>
-                <th>Student Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Courses</th>
-                <th>Status</th>
+                <th>Profile</th>
             </thead>
             <tbody>            
-                <tr>
-                    <td><%= data[0].Profile.id %> </td>
-                    <td><%= data[0].Profile.name %> </td>
-                    <td><%= data[0].Profile.age %> </td>
-                    <td><%= data[0].Profile.gender %> </td>
-                    <td>
-                        <li>
-                            <%= data[0].Courses[0].name %> 
-                            <button onclick="hide()">Course Detail</button>
-                            <br>
-                            <pre id="detail" style="display:none ;">
-    <%= data[0].Courses[0].description %> 
-                            </pre>
-                        </li>
-                    </td>
-                    <td>
-                        <%= data[0].Courses[0].UserCourse.status %> 
-                    </td>
-                </tr>
+                <td style="text-align:justify ;">
+                    <label for="name">Name :</label>
+                    <%= data[0].Profile.name %> <br>
+                    <label for="age">Age :</label>
+                    <%= data[0].Profile.age %> <br>
+                    <label for="gender">Gender :</label>
+                    <%= data[0].Profile.gender %>
+                </td>
+            </tbody>
+        </table>
+        <a href="/student/<%= data[0].id %> /editProfile"><button>Edit Profile</button></a>
+    </div>
+    <br>
+    <div>
+        <table border="1" style="text-align:center">
+            <thead>
+                <th>Courses</th>
+                <th>Status</th>
+                <th>Drop Course</th>
+            </thead>
+            <tbody>
+                <% data[0].Courses.forEach(el => { %>                 
+                    <tr>
+                        <td>
+                            <li>
+                                <%= el.name%> 
+                                <%= el.id %> 
+                            </li>
+                        </td>
+                        <td>
+                            <%= el.UserCourse.complete %> 
+                        </td>
+                        <td>
+                            <a href="/student/<%= data[0].id %> /deleteCourse/<%= el.id%> "><button <%=el.UserCourse.complete === 'Completed' ? 'disabled' : '' %>>Drop</button></a>
+                        </td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
-    <script>
-        function hide() {
-          var x = document.getElementById("detail");
-          if (x.style.display === "block") {
-            x.style.display = "none";
-          } else {
-            x.style.display = "block";
-          }
-        }
-    </script>
+    <div>
+        <a href="/student/<%= data[0].id %> /addCourse"><button>Add Course</button></a>
+    </div>
 </body>
 </html>
