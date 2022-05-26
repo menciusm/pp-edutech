@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-    get status() {
+    get complete() {
       if (this.status === true) {
-        return 'Completed'
+        return "Completed"
       } else {
-        return 'On Going'
+        return "On Going"
       }
     }
   }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course Form</title>
+</head>
+<body>
+    <h1>Add Course</h1>
+    <form action="/student/<%= id %> /addCourse" method="post">
+        <div style="text-align: right;">
+            <input type="submit" value="Add" >
+        </div>
+        <table border="1">
+        <thead>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Category</th>
+            <th>Select</th>
+        </thead>
+        <tbody>
+            <% course.forEach(el => { %>
+                <tr>
+                    <td><%= el.name %> </td>
+                    <td name="description"><%= el.description %> </td>
+                    <td name="duration"><%= minutesConverter(el.duration) %> </td>
+                    <td name="category"><%= el.category %> </td>
+                    <td style="text-align: center;">                         
+                        <input type="radio" name="CourseId" value="<%= el.id %>">
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+</form>
+    <%= JSON.stringify(course.id) %> 
+    <!-- <%= JSON.stringify(id) %>  -->
+</body>
+</html>

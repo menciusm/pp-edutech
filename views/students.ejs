@@ -8,7 +8,7 @@
 </head>
 <body >
     <h1>Profile</h1>
-    <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
+    <!-- <%= JSON.stringify(data[0].Courses, null, 2) %>  -->
 
     <div>
         <table border="1" >
@@ -33,35 +33,29 @@
             <thead>
                 <th>Courses</th>
                 <th>Status</th>
+                <th>Drop Course</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <li>
-                            <%= data[0].Courses[0].name %> 
-                            <button onclick="hide()">Course Detail</button>
-                            <br>
-                            <pre id="detail" style="display:none ;">
-    <%= data[0].Courses[0].description %> 
-                            </pre>
-                        </li>
-                    </td>
-                    <td>
-                        <%= data[0].Courses[0].UserCourse.status %> 
-                    </td>
-                </tr>
+                <% data[0].Courses.forEach(el => { %>                 
+                    <tr>
+                        <td>
+                            <li>
+                                <%= el.name%> 
+                            </li>
+                        </td>
+                        <td>
+                            <%= el.UserCourse.complete %> 
+                        </td>
+                        <td>
+                            <a href="/student/<%= data[0].id %> /deleteCourse/<%= el.id%> "><button <%=el.UserCourse.complete === 'Completed' ? 'disabled' : '' %>>Drop</button></a>
+                        </td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
-    <script>
-        function hide() {
-          var x = document.getElementById("detail");
-          if (x.style.display === "block") {
-            x.style.display = "none";
-          } else {
-            x.style.display = "block";
-          }
-        }
-    </script>
+    <div>
+        <a href="/student/<%= data[0].id %> /addCourse"><button>Add Course</button></a>
+    </div>
 </body>
 </html>
