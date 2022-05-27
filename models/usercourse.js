@@ -24,9 +24,17 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.BOOLEAN,
     UserId: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'User', 
+        key: 'id'
+      }
     },
     CourseId: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'Course', 
+        key: 'id'
+      }
     },
     createdAt : DataTypes.DATE,
     updatedAt : DataTypes.DATE

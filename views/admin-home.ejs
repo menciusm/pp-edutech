@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>Profile</th>
+        </thead>
+        <tbody >            
+            <td style="text-align:justify ;">
+                <label for="name">Name :</label>
+                <%= data[0].Profile.name %> <br>
+                <label for="age">Age :</label>
+                <%= data[0].Profile.age %> <br>
+                <label for="gender">Gender :</label>
+                <%= data[0].Profile.gender %>
+            </td>
+        </tbody>
+    </table>
+    <a href="/student/<%= data[0].id %> /editProfile"><button>Edit Profile</button></a>
+
+    <a href="/admin/student">List Student</a>
+    <a href="/admin/course">List Course</a>
+</body>
+</html>

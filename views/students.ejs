@@ -4,57 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css">
     <title>Students Page</title>
 </head>
 <body >
     <h1>Profile</h1>
-    <!-- <%= JSON.stringify(data[0].Courses[0]) %>  -->
-
+    <%= data[0].Profile.helo() %>  
     <div>
-        <table border="1" style="text-align:center" >
+        <a href="/logout">
+            <button>Log out</button>
+        </a>
+    </div>
+    <div>
+        <table border="1">
             <thead>
-                <th>Student Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th>Profile</th>
+            </thead>
+            <tbody >            
+                <td style="text-align:justify ;">
+                    <label for="name">Name :</label>
+                    <%= data[0].Profile.name %> <br>
+                    <label for="age">Age :</label>
+                    <%= data[0].Profile.age %> <br>
+                    <label for="gender">Gender :</label>
+                    <%= data[0].Profile.gender %>
+                </td>
+            </tbody>
+        </table>
+        <a href="/student/<%= data[0].id %> /editProfile"><button>Edit Profile</button></a>
+    </div>
+    <br>
+    <div >
+        <table border="1" style="text-align:center">
+            <thead>
                 <th>Courses</th>
                 <th>Status</th>
+                <th>Drop Course</th>
             </thead>
-            <tbody>            
-                <% data.map(user => { %>
-                <tr>
-                    <td><%= user.Profile.id %> </td>
-                    <td><%= user.Profile.name %> </td>
-                    <td><%= user.Profile.age %> </td>
-                    <td><%= user.Profile.gender %> </td>
-                    <% user.Courses.map((course) => { %>
-                    <td>
-                        <li>
-                            <%= course.name %> 
-                            <button onclick="hide()">Course Detail</button>
-                            <br>
-                            <pre id="detail" style="display:none ;"><%= course.description %></pre>
-                        </li>
-                    </td>
-                    <td>
-                        <%= course.UserCourse.status %> 
-                    </td>
-                    <% }) %>
-                </tr>
-                <% }) %> 
+            <tbody>
+                <% data[0].Courses.forEach(el => { %>                 
+                    <tr>
+                        <td>
+                            <li>
+                                <%= el.name%>  
+                            </li>
+                        </td>
+                        <td>
+                            <%= el.UserCourse.complete %> 
+                        </td>
+                        <td>
+                            <a href="/student/<%= data[0].id %> /deleteCourse/<%= el.id%> "><button <%=el.UserCourse.complete === 'Completed' ? 'disabled' : '' %>>Drop</button></a>
+                        </td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
-
-    <script>
-        function hide() {
-          var x = document.getElementById("detail");
-          if (x.style.display === "block") {
-            x.style.display = "none";
-          } else {
-            x.style.display = "block";
-          }
-        }
-    </script>
+    <div>
+        <a href="/student/<%= data[0].id %> /addCourse"><button>Add Course</button></a>
+    </div>
 </body>
 </html>

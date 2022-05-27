@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body style="text-align: center;">
+    <h1>Login</h1>
+    <a href="/">
+        <button>Home</button>
+    </a>
+    <% if (error) { %>
+        <p style="color:red ;"> <%= error %> </p>
+    <% } %>
+    <form action="/login" method="post">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <h3>Doesn't have account?</h3>
+    <div>
+        <a href="/register">
+            <button>Register</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Profile Info</h1>
+    <!-- <%= JSON.stringify(data.UserId) %>  -->
+    <table border="1">
+        <form action="/student/<%= data.UserId%> /editProfile" method="post">
+            <thead>
+                <th>Profile</th>
+            </thead>
+            <tbody>                            
+                <td style="text-align:justify ;">
+                    <div>
+                        <label for="name">Name :</label>
+                        <input type="text" name="name" value="<%= data.name%>">
+                    </div>
+                    <div>
+                        <label for="age">Age :</label>
+                        <input type="number" name="age" value="<%= data.age%>">                        
+                    </div>
+                    <div>
+                        <label for="gender">Gender :</label>
+                        <select name="gender">
+                            <option value="Male" <%= data.gender === 'Male' ? 'selected' : ''%> >Male</option>
+                            <option value="Female" <%= data.gender === 'Female' ? 'selected' : ''%> >Female</option>
+                        </select>
+                    </div>
+                    <button type="submit">Edit</button>
+                    <a href="/student/<%= data.UserId %>">
+                        <button>Cancel</button>
+                    </a>
+                </td>
+            </tbody>
+        </form>
+    </table>
+</body>
+</html>

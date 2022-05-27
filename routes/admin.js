@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { Controller } = require('../controllers/controller')
 
+router.get('/', Controller.adminPage)
 router.get('/student', Controller.adminStudentPage)
 router.get('/course', Controller.adminCourse)
 router.get('/course/add', Controller.addFormCourse)
